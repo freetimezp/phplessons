@@ -1,36 +1,12 @@
 <?php
 
-class Grandpa {
+define("VG_ACCESS", true);
 
-    public $body = 'нормальное';
+header('Content-Type: text/html; charset=utf-8');
 
-    private $borsh = 'yummy';
+session_start();
 
-    public function eat($callories) {
-        if($callories > 500) {
-            $this->body = 'толстый';
-        }else{
-            $this->body = 'худой';
-        }
-    }
-
-    protected function getBorsh() {
-        return $this->borsh;
-    }
-}
-
-class Father extends Grandpa {
-    protected $hair = 'русые';
-    public function recolor($color) {
-        $this->hair = $color;
-        echo $this->hair;
-    }
-}
-
-$masha = new Father();
-
-$masha->recolor('white');
-
-
+require_once 'config.php';
+require_once 'core/base/settings/internal_settings.php';
 
 
